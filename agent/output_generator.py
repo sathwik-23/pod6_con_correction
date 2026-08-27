@@ -19,7 +19,14 @@ class OutputGenerator:
         }
 
     @staticmethod
-    def save_output(path, output):
+    def save_output(
+        path,
+        output
+    ):
 
         with open(path, "w") as file:
-            json.dump(output, file, indent=4)
+            json.dump(
+                output,
+                file,
+                indent=4
+            )

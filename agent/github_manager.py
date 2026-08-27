@@ -1,58 +1,87 @@
-import os
+import time
+import json
 
 from github import Github
-from git import Repo
+from github.GithubException import GithubException
 
 
 class GithubManager:
 
-    def __init__(self):
+    def __init__(self, github_token, repo_name):
 
-        self.token = os.getenv("GITHUB_TOKEN")
-        self.repository_name = os.getenv("GITHUB_REPOSITORY")
+        self.github = Github(github_token)
+        self.repository = self.github.get_repo(repo_name)
 
-    def create_branch(self, repo_path, branch_name):
+    def create_branch(self, incident_id):
 
-        repo = Repo(repo_path)
+        source_branch = self.repository.get_branch(
+            "main"
+        )
 
-        try:
-            repo.git.checkout("-b", branch_name)
+        branch_name = (
+            f"remediation-"
+            f"{incident_id}-"
+            f"{int(time.time())}"
+        )
 
-        except Exception:
-            repo.git.checkout(branch_name)
+        self.repository.create_git_ref(
+            ref=f"refs/heads/{branch_name}",
+            sha=source_branch.commit.sha
+        )
 
-        return repo
+        print(f"Created Branch: {branch_name}")
 
-    def commit_changes(self, repo, message):
+        return branch_name
 
-        repo.git.add(A=True)
+    def update_file_in_branch(
+        self,
+        branch_name,
+        file_path,
+        content
+    ):
 
-        repo.index.commit(message)
+        file = self.repository.get_contents(
+            file_path,
+            ref=branch_name
+        )
 
-    def push_branch(self, repo, branch):
+        self.repository.update_file(
+            path=file_path,
+            message=f"Configuration remediation in {branch_name}",
+            content=json.dumps(content, indent=4),
+            sha=file.sha,
+            branch=branch_name
+        )
 
-        origin = repo.remote(name="origin")
-
-        origin.push(branch)
+        print(
+            f"Updated file: {file_path}"
+        )
 
     def create_pull_request(
         self,
-        branch,
+        branch_name,
         title,
-        body
+        body,
+        base_branch="main"
     ):
 
-        github = Github(self.token)
+        try:
 
-        repository = github.get_repo(
-            self.repository_name
-        )
+            pr = self.repository.create_pull(
+                title=title,
+                body=body,
+                head=branch_name,
+                base=base_branch
+            )
 
-        pr = repository.create_pull(
-            title=title,
-            body=body,
-            head=branch,
-            base="main"
-        )
+            print(
+                f"PR Created: {pr.html_url}"
+            )
 
-        return pr.html_url
+            return pr.html_url
+
+        except GithubException as e:
+
+            print(f"PR Creation Error: {e}")
+
+            return None

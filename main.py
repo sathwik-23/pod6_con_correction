@@ -10,7 +10,7 @@ from agent.output_generator import OutputGenerator
 from agent.github_manager import GithubManager
 
 
-load_dotenv()
+load_dotenv(".env")
 
 
 class ConfigCorrectionAgent:
@@ -43,48 +43,34 @@ class ConfigCorrectionAgent:
             resolution["actions"]
         ):
             raise Exception(
-                "Configuration validation failed."
+                "Configuration validation failed"
             )
 
-        github_manager = GithubManager()
-
-        repo_path = os.getcwd()
-
-        branch_name = (
-            f"remediation-"
-            f"{resolution['incident_id']}"
+        github_manager = GithubManager(
+            os.getenv("GITHUB_TOKEN"),
+            os.getenv("GITHUB_REPOSITORY")
         )
 
-        repo = github_manager.create_branch(
-            repo_path,
-            branch_name
+        branch_name = github_manager.create_branch(
+            resolution["incident_id"]
         )
 
-        github_manager.commit_changes(
-            repo,
-            f"Remediation for "
-            f"{resolution['incident_id']}"
+        github_manager.update_file_in_branch(
+            branch_name,
+            resolution["config_file_path"],
+            config
         )
 
-        github_manager.push_branch(
-            repo,
-            branch_name
+        pr_url = github_manager.create_pull_request(
+            branch_name,
+            f"Fix {resolution['incident_id']}",
+            "Automated configuration remediation"
         )
 
-        pr_url = (
-            github_manager.create_pull_request(
-                branch_name,
-                f"Fix {resolution['incident_id']}",
-                "Automated configuration remediation"
-            )
-        )
-
-        output = (
-            OutputGenerator.generate_status(
-                resolution["incident_id"],
-                len(resolution["actions"]),
-                pr_url
-            )
+        output = OutputGenerator.generate_status(
+            resolution["incident_id"],
+            len(resolution["actions"]),
+            pr_url
         )
 
         OutputGenerator.save_output(
@@ -92,13 +78,8 @@ class ConfigCorrectionAgent:
             output
         )
 
-        print(
-            "SUCCESS"
-        )
-
-        print(
-            f"PR URL : {pr_url}"
-        )
+        print("SUCCESS")
+        print(f"PR URL: {pr_url}")
 
 
 if __name__ == "__main__":

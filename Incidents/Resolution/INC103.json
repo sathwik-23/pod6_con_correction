@@ -10,7 +10,7 @@
       "action_type": "review",
       "parameter": "auth.jwt.access_token_expiry_seconds",
       "current_value": 3600,
-      "new_value": null,
+      "new_value": 5050,
       "priority": 2,
       "justification": "Config parameter 'auth.jwt.access_token_expiry_seconds' is present with value 3600 but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
       "business_impact": "Leaving 'auth.jwt.access_token_expiry_seconds' as '3600' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
