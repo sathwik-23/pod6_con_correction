@@ -1,0 +1,1062 @@
+{
+  "incident_id": "INC-103",
+  "app_component": "database_ops",
+  "config_file_path": "services/database-hosting/config.json",
+  "resolution_generated_at": "2026-08-19T10:07:03Z",
+  "agent": "Config Validation Agent",
+  "validation_summary": "Configuration is inconsistent with the RCA analysis. Configuration changes are required.",
+  "actions": [
+    {
+      "action_type": "review",
+      "parameter": "auth.jwt.access_token_expiry_seconds",
+      "current_value": 3600,
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'auth.jwt.access_token_expiry_seconds' is present with value 3600 but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'auth.jwt.access_token_expiry_seconds' as '3600' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'auth.jwt.access_token_expiry_seconds' = '3600', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "auth.jwt.algorithm",
+      "current_value": "RS256",
+      "new_value": "RS10202",
+      "priority": 2,
+      "justification": "Config parameter 'auth.jwt.algorithm' is present with value 'RS256' but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'auth.jwt.algorithm' as 'RS256' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'auth.jwt.algorithm' = 'RS256', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "auth.jwt.audience",
+      "current_value": "database-operations",
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'auth.jwt.audience' is present with value 'database-operations' but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'auth.jwt.audience' as 'database-operations' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'auth.jwt.audience' = 'database-operations', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "auth.jwt.clock_skew_tolerance_seconds",
+      "current_value": 30,
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'auth.jwt.clock_skew_tolerance_seconds' is present with value 30 but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'auth.jwt.clock_skew_tolerance_seconds' as '30' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'auth.jwt.clock_skew_tolerance_seconds' = '30', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "auth.jwt.issuer",
+      "current_value": "https://db-admin.internal.company.com",
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'auth.jwt.issuer' is present with value 'https://db-admin.internal.company.com' but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'auth.jwt.issuer' as 'https://db-admin.internal.company.com' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'auth.jwt.issuer' = 'https://db-admin.internal.company.com', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "auth.jwt.private_key_secret_ref",
+      "current_value": "vault://secrets/database-ops/jwt-private-key",
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'auth.jwt.private_key_secret_ref' is present with value 'vault://secrets/database-ops/jwt-private-key' but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'auth.jwt.private_key_secret_ref' as 'vault://secrets/database-ops/jwt-private-key' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'auth.jwt.private_key_secret_ref' = 'vault://secrets/database-ops/jwt-private-key', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "auth.jwt.public_key_secret_ref",
+      "current_value": "vault://secrets/database-ops/jwt-public-key",
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'auth.jwt.public_key_secret_ref' is present with value 'vault://secrets/database-ops/jwt-public-key' but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'auth.jwt.public_key_secret_ref' as 'vault://secrets/database-ops/jwt-public-key' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'auth.jwt.public_key_secret_ref' = 'vault://secrets/database-ops/jwt-public-key', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "auth.jwt.refresh_token_expiry_seconds",
+      "current_value": 86400,
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'auth.jwt.refresh_token_expiry_seconds' is present with value 86400 but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'auth.jwt.refresh_token_expiry_seconds' as '86400' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'auth.jwt.refresh_token_expiry_seconds' = '86400', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "auth.mfa.enabled",
+      "current_value": true,
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'auth.mfa.enabled' is present with value True but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'auth.mfa.enabled' as 'True' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'auth.mfa.enabled' = 'True', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "auth.mfa.providers",
+      "current_value": [
+        "totp"
+      ],
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'auth.mfa.providers' is present with value ['totp'] but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'auth.mfa.providers' as '[\"totp\"]' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'auth.mfa.providers' = '[\"totp\"]', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "auth.mfa.totp_issuer",
+      "current_value": "Database Ops",
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'auth.mfa.totp_issuer' is present with value 'Database Ops' but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'auth.mfa.totp_issuer' as 'Database Ops' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'auth.mfa.totp_issuer' = 'Database Ops', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "auth.password_policy.lockout_duration_seconds",
+      "current_value": 1800,
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'auth.password_policy.lockout_duration_seconds' is present with value 1800 but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'auth.password_policy.lockout_duration_seconds' as '1800' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'auth.password_policy.lockout_duration_seconds' = '1800', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "auth.password_policy.max_failed_attempts",
+      "current_value": 3,
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'auth.password_policy.max_failed_attempts' is present with value 3 but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'auth.password_policy.max_failed_attempts' as '3' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'auth.password_policy.max_failed_attempts' = '3', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "auth.password_policy.min_length",
+      "current_value": 14,
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'auth.password_policy.min_length' is present with value 14 but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'auth.password_policy.min_length' as '14' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'auth.password_policy.min_length' = '14', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "auth.password_policy.require_numbers",
+      "current_value": true,
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'auth.password_policy.require_numbers' is present with value True but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'auth.password_policy.require_numbers' as 'True' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'auth.password_policy.require_numbers' = 'True', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "auth.password_policy.require_special_chars",
+      "current_value": true,
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'auth.password_policy.require_special_chars' is present with value True but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'auth.password_policy.require_special_chars' as 'True' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'auth.password_policy.require_special_chars' = 'True', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "auth.password_policy.require_uppercase",
+      "current_value": true,
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'auth.password_policy.require_uppercase' is present with value True but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'auth.password_policy.require_uppercase' as 'True' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'auth.password_policy.require_uppercase' = 'True', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "cache.provider",
+      "current_value": "redis",
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'cache.provider' is present with value 'redis' but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'cache.provider' as 'redis' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'cache.provider' = 'redis', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "cache.redis.connection_timeout_ms",
+      "current_value": 2500,
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'cache.redis.connection_timeout_ms' is present with value 2500 but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'cache.redis.connection_timeout_ms' as '2500' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'cache.redis.connection_timeout_ms' = '2500', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "cache.redis.db_index",
+      "current_value": 2,
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'cache.redis.db_index' is present with value 2 but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'cache.redis.db_index' as '2' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'cache.redis.db_index' = '2', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "cache.redis.host",
+      "current_value": "redis-dbops.internal",
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'cache.redis.host' is present with value 'redis-dbops.internal' but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'cache.redis.host' as 'redis-dbops.internal' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'cache.redis.host' = 'redis-dbops.internal', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "cache.redis.max_connections",
+      "current_value": 15,
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'cache.redis.max_connections' is present with value 15 but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'cache.redis.max_connections' as '15' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'cache.redis.max_connections' = '15', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "cache.redis.password_secret_ref",
+      "current_value": "vault://secrets/database-ops/redis-password",
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'cache.redis.password_secret_ref' is present with value 'vault://secrets/database-ops/redis-password' but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'cache.redis.password_secret_ref' as 'vault://secrets/database-ops/redis-password' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'cache.redis.password_secret_ref' = 'vault://secrets/database-ops/redis-password', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "cache.redis.port",
+      "current_value": 6379,
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'cache.redis.port' is present with value 6379 but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'cache.redis.port' as '6379' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'cache.redis.port' = '6379', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "cache.redis.retry_on_timeout",
+      "current_value": true,
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'cache.redis.retry_on_timeout' is present with value True but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'cache.redis.retry_on_timeout' as 'True' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'cache.redis.retry_on_timeout' = 'True', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "cache.redis.session_ttl_seconds",
+      "current_value": 1800,
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'cache.redis.session_ttl_seconds' is present with value 1800 but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'cache.redis.session_ttl_seconds' as '1800' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'cache.redis.session_ttl_seconds' = '1800', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "cache.redis.token_blacklist_ttl_seconds",
+      "current_value": 7200,
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'cache.redis.token_blacklist_ttl_seconds' is present with value 7200 but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'cache.redis.token_blacklist_ttl_seconds' as '7200' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'cache.redis.token_blacklist_ttl_seconds' = '7200', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "database.connection_pool.connection_timeout_ms",
+      "current_value": 25000,
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'database.connection_pool.connection_timeout_ms' is present with value 25000 but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'database.connection_pool.connection_timeout_ms' as '25000' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'database.connection_pool.connection_timeout_ms' = '25000', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "database.connection_pool.max_idle_seconds",
+      "current_value": 180,
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'database.connection_pool.max_idle_seconds' is present with value 180 but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'database.connection_pool.max_idle_seconds' as '180' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'database.connection_pool.max_idle_seconds' = '180', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "database.connection_pool.max_size",
+      "current_value": 15,
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'database.connection_pool.max_size' is present with value 15 but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'database.connection_pool.max_size' as '15' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'database.connection_pool.max_size' = '15', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "database.connection_pool.min_size",
+      "current_value": 5,
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'database.connection_pool.min_size' is present with value 5 but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'database.connection_pool.min_size' as '5' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'database.connection_pool.min_size' = '5', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "database.connection_pool.validation_query",
+      "current_value": "SELECT 1",
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'database.connection_pool.validation_query' is present with value 'SELECT 1' but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'database.connection_pool.validation_query' as 'SELECT 1' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'database.connection_pool.validation_query' = 'SELECT 1', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "database.host",
+      "current_value": "postgres-prod.internal",
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'database.host' is present with value 'postgres-prod.internal' but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'database.host' as 'postgres-prod.internal' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'database.host' = 'postgres-prod.internal', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "database.maintenance.backup_log_retention_days",
+      "current_value": 14,
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'database.maintenance.backup_log_retention_days' is present with value 14 but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'database.maintenance.backup_log_retention_days' as '14' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'database.maintenance.backup_log_retention_days' = '14', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "database.maintenance.backup_retention_days",
+      "current_value": 30,
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'database.maintenance.backup_retention_days' is present with value 30 but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'database.maintenance.backup_retention_days' as '30' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'database.maintenance.backup_retention_days' = '30', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "database.maintenance.cleanup_threshold_percent",
+      "current_value": 90,
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'database.maintenance.cleanup_threshold_percent' is present with value 90 but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'database.maintenance.cleanup_threshold_percent' as '90' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'database.maintenance.cleanup_threshold_percent' = '90', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "database.maintenance.old_log_cleanup_strategy",
+      "current_value": "archive_and_rotate",
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'database.maintenance.old_log_cleanup_strategy' is present with value 'archive_and_rotate' but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'database.maintenance.old_log_cleanup_strategy' as 'archive_and_rotate' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'database.maintenance.old_log_cleanup_strategy' = 'archive_and_rotate', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "database.name",
+      "current_value": "postgres",
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'database.name' is present with value 'postgres' but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'database.name' as 'postgres' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'database.name' = 'postgres', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "database.password_secret_ref",
+      "current_value": "vault://secrets/postgres-prod/db-password",
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'database.password_secret_ref' is present with value 'vault://secrets/postgres-prod/db-password' but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'database.password_secret_ref' as 'vault://secrets/postgres-prod/db-password' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'database.password_secret_ref' = 'vault://secrets/postgres-prod/db-password', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "database.port",
+      "current_value": 5432,
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'database.port' is present with value 5432 but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'database.port' as '5432' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'database.port' = '5432', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "database.ssl.cert_path",
+      "current_value": "/etc/ssl/certs/postgres-prod-ca.crt",
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'database.ssl.cert_path' is present with value '/etc/ssl/certs/postgres-prod-ca.crt' but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'database.ssl.cert_path' as '/etc/ssl/certs/postgres-prod-ca.crt' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'database.ssl.cert_path' = '/etc/ssl/certs/postgres-prod-ca.crt', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "database.ssl.enabled",
+      "current_value": true,
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'database.ssl.enabled' is present with value True but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'database.ssl.enabled' as 'True' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'database.ssl.enabled' = 'True', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "database.ssl.mode",
+      "current_value": "verify-full",
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'database.ssl.mode' is present with value 'verify-full' but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'database.ssl.mode' as 'verify-full' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'database.ssl.mode' = 'verify-full', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "database.user",
+      "current_value": "dbadmin",
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'database.user' is present with value 'dbadmin' but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'database.user' as 'dbadmin' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'database.user' = 'dbadmin', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "logging.format",
+      "current_value": "json",
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'logging.format' is present with value 'json' but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'logging.format' as 'json' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'logging.format' = 'json', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "logging.include_request_body",
+      "current_value": false,
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'logging.include_request_body' is present with value False but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'logging.include_request_body' as 'False' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'logging.include_request_body' = 'False', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "logging.include_response_body",
+      "current_value": false,
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'logging.include_response_body' is present with value False but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'logging.include_response_body' as 'False' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'logging.include_response_body' = 'False', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "logging.level",
+      "current_value": "WARN",
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'logging.level' is present with value 'WARN' but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'logging.level' as 'WARN' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'logging.level' = 'WARN', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "logging.log_rotation.enabled",
+      "current_value": true,
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'logging.log_rotation.enabled' is present with value True but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'logging.log_rotation.enabled' as 'True' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'logging.log_rotation.enabled' = 'True', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "logging.log_rotation.max_backups",
+      "current_value": 14,
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'logging.log_rotation.max_backups' is present with value 14 but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'logging.log_rotation.max_backups' as '14' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'logging.log_rotation.max_backups' = '14', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "logging.log_rotation.max_size_mb",
+      "current_value": 200,
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'logging.log_rotation.max_size_mb' is present with value 200 but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'logging.log_rotation.max_size_mb' as '200' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'logging.log_rotation.max_size_mb' = '200', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "logging.output",
+      "current_value": "stdout",
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'logging.output' is present with value 'stdout' but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'logging.output' as 'stdout' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'logging.output' = 'stdout', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "logging.slow_request_threshold_ms",
+      "current_value": 2000,
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'logging.slow_request_threshold_ms' is present with value 2000 but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'logging.slow_request_threshold_ms' as '2000' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'logging.slow_request_threshold_ms' = '2000', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "observability.health_check.enabled",
+      "current_value": true,
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'observability.health_check.enabled' is present with value True but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'observability.health_check.enabled' as 'True' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'observability.health_check.enabled' = 'True', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "observability.health_check.endpoint",
+      "current_value": "/internal/health",
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'observability.health_check.endpoint' is present with value '/internal/health' but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'observability.health_check.endpoint' as '/internal/health' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'observability.health_check.endpoint' = '/internal/health', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "observability.health_check.interval_seconds",
+      "current_value": 30,
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'observability.health_check.interval_seconds' is present with value 30 but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'observability.health_check.interval_seconds' as '30' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'observability.health_check.interval_seconds' = '30', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "observability.metrics.enabled",
+      "current_value": true,
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'observability.metrics.enabled' is present with value True but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'observability.metrics.enabled' as 'True' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'observability.metrics.enabled' = 'True', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "observability.metrics.endpoint",
+      "current_value": "/internal/metrics",
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'observability.metrics.endpoint' is present with value '/internal/metrics' but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'observability.metrics.endpoint' as '/internal/metrics' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'observability.metrics.endpoint' = '/internal/metrics', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "observability.metrics.port",
+      "current_value": 9101,
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'observability.metrics.port' is present with value 9101 but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'observability.metrics.port' as '9101' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'observability.metrics.port' = '9101', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "observability.tracing.enabled",
+      "current_value": true,
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'observability.tracing.enabled' is present with value True but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'observability.tracing.enabled' as 'True' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'observability.tracing.enabled' = 'True', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "observability.tracing.endpoint",
+      "current_value": "http://otel-collector.internal:4317",
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'observability.tracing.endpoint' is present with value 'http://otel-collector.internal:4317' but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'observability.tracing.endpoint' as 'http://otel-collector.internal:4317' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'observability.tracing.endpoint' = 'http://otel-collector.internal:4317', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "observability.tracing.provider",
+      "current_value": "opentelemetry",
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'observability.tracing.provider' is present with value 'opentelemetry' but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'observability.tracing.provider' as 'opentelemetry' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'observability.tracing.provider' = 'opentelemetry', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "observability.tracing.sampling_rate",
+      "current_value": 0.05,
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'observability.tracing.sampling_rate' is present with value 0.05 but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'observability.tracing.sampling_rate' as '0.05' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'observability.tracing.sampling_rate' = '0.05', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "security.cors.allow_credentials",
+      "current_value": false,
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'security.cors.allow_credentials' is present with value False but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'security.cors.allow_credentials' as 'False' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'security.cors.allow_credentials' = 'False', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "security.cors.allowed_methods",
+      "current_value": [
+        "GET",
+        "POST"
+      ],
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'security.cors.allowed_methods' is present with value ['GET', 'POST'] but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'security.cors.allowed_methods' as '[\"GET\", \"POST\"]' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'security.cors.allowed_methods' = '[\"GET\", \"POST\"]', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "security.cors.allowed_origins",
+      "current_value": [
+        "https://db-portal.company.com"
+      ],
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'security.cors.allowed_origins' is present with value ['https://db-portal.company.com'] but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'security.cors.allowed_origins' as '[\"https://db-portal.company.com\"]' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'security.cors.allowed_origins' = '[\"https://db-portal.company.com\"]', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "security.cors.max_age_seconds",
+      "current_value": 300,
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'security.cors.max_age_seconds' is present with value 300 but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'security.cors.max_age_seconds' as '300' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'security.cors.max_age_seconds' = '300', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "security.rate_limit.burst_size",
+      "current_value": 100,
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'security.rate_limit.burst_size' is present with value 100 but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'security.rate_limit.burst_size' as '100' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'security.rate_limit.burst_size' = '100', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "security.rate_limit.enabled",
+      "current_value": false,
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'security.rate_limit.enabled' is present with value False but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'security.rate_limit.enabled' as 'False' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'security.rate_limit.enabled' = 'False', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "security.rate_limit.key_by",
+      "current_value": "service_id",
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'security.rate_limit.key_by' is present with value 'service_id' but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'security.rate_limit.key_by' as 'service_id' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'security.rate_limit.key_by' = 'service_id', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "security.rate_limit.requests_per_minute",
+      "current_value": 500,
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'security.rate_limit.requests_per_minute' is present with value 500 but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'security.rate_limit.requests_per_minute' as '500' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'security.rate_limit.requests_per_minute' = '500', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "security.rate_limit.strategy",
+      "current_value": "fixed_window",
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'security.rate_limit.strategy' is present with value 'fixed_window' but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'security.rate_limit.strategy' as 'fixed_window' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'security.rate_limit.strategy' = 'fixed_window', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "security.tls.cert_path",
+      "current_value": "/etc/ssl/certs/database-ops.crt",
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'security.tls.cert_path' is present with value '/etc/ssl/certs/database-ops.crt' but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'security.tls.cert_path' as '/etc/ssl/certs/database-ops.crt' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'security.tls.cert_path' = '/etc/ssl/certs/database-ops.crt', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "security.tls.enabled",
+      "current_value": true,
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'security.tls.enabled' is present with value True but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'security.tls.enabled' as 'True' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'security.tls.enabled' = 'True', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "security.tls.key_path",
+      "current_value": "/etc/ssl/private/database-ops.key",
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'security.tls.key_path' is present with value '/etc/ssl/private/database-ops.key' but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'security.tls.key_path' as '/etc/ssl/private/database-ops.key' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'security.tls.key_path' = '/etc/ssl/private/database-ops.key', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "security.tls.min_version",
+      "current_value": "TLSv1.2",
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'security.tls.min_version' is present with value 'TLSv1.2' but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'security.tls.min_version' as 'TLSv1.2' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'security.tls.min_version' = 'TLSv1.2', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "server.graceful_shutdown_timeout_seconds",
+      "current_value": 60,
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'server.graceful_shutdown_timeout_seconds' is present with value 60 but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'server.graceful_shutdown_timeout_seconds' as '60' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'server.graceful_shutdown_timeout_seconds' = '60', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "server.host",
+      "current_value": "0.0.0.0",
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'server.host' is present with value '0.0.0.0' but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'server.host' as '0.0.0.0' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'server.host' = '0.0.0.0', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "server.max_concurrent_requests",
+      "current_value": 350,
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'server.max_concurrent_requests' is present with value 350 but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'server.max_concurrent_requests' as '350' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'server.max_concurrent_requests' = '350', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "server.port",
+      "current_value": 6432,
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'server.port' is present with value 6432 but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'server.port' as '6432' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'server.port' = '6432', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "server.request_timeout_seconds",
+      "current_value": 90,
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'server.request_timeout_seconds' is present with value 90 but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'server.request_timeout_seconds' as '90' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'server.request_timeout_seconds' = '90', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "upstream_services.alert_service.base_url",
+      "current_value": "http://alerting.internal:8084",
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'upstream_services.alert_service.base_url' is present with value 'http://alerting.internal:8084' but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'upstream_services.alert_service.base_url' as 'http://alerting.internal:8084' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'upstream_services.alert_service.base_url' = 'http://alerting.internal:8084', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "upstream_services.alert_service.circuit_breaker.enabled",
+      "current_value": true,
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'upstream_services.alert_service.circuit_breaker.enabled' is present with value True but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'upstream_services.alert_service.circuit_breaker.enabled' as 'True' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'upstream_services.alert_service.circuit_breaker.enabled' = 'True', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "upstream_services.alert_service.circuit_breaker.failure_threshold",
+      "current_value": 3,
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'upstream_services.alert_service.circuit_breaker.failure_threshold' is present with value 3 but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'upstream_services.alert_service.circuit_breaker.failure_threshold' as '3' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'upstream_services.alert_service.circuit_breaker.failure_threshold' = '3', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "upstream_services.alert_service.circuit_breaker.recovery_timeout_seconds",
+      "current_value": 30,
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'upstream_services.alert_service.circuit_breaker.recovery_timeout_seconds' is present with value 30 but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'upstream_services.alert_service.circuit_breaker.recovery_timeout_seconds' as '30' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'upstream_services.alert_service.circuit_breaker.recovery_timeout_seconds' = '30', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "upstream_services.alert_service.retry_attempts",
+      "current_value": 2,
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'upstream_services.alert_service.retry_attempts' is present with value 2 but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'upstream_services.alert_service.retry_attempts' as '2' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'upstream_services.alert_service.retry_attempts' = '2', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "upstream_services.alert_service.timeout_seconds",
+      "current_value": 5,
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'upstream_services.alert_service.timeout_seconds' is present with value 5 but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'upstream_services.alert_service.timeout_seconds' as '5' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'upstream_services.alert_service.timeout_seconds' = '5', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "upstream_services.backup_service.base_url",
+      "current_value": "http://backup-svc.internal:8083",
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'upstream_services.backup_service.base_url' is present with value 'http://backup-svc.internal:8083' but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'upstream_services.backup_service.base_url' as 'http://backup-svc.internal:8083' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'upstream_services.backup_service.base_url' = 'http://backup-svc.internal:8083', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "upstream_services.backup_service.circuit_breaker.enabled",
+      "current_value": true,
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'upstream_services.backup_service.circuit_breaker.enabled' is present with value True but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'upstream_services.backup_service.circuit_breaker.enabled' as 'True' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'upstream_services.backup_service.circuit_breaker.enabled' = 'True', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "upstream_services.backup_service.circuit_breaker.failure_threshold",
+      "current_value": 4,
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'upstream_services.backup_service.circuit_breaker.failure_threshold' is present with value 4 but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'upstream_services.backup_service.circuit_breaker.failure_threshold' as '4' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'upstream_services.backup_service.circuit_breaker.failure_threshold' = '4', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "upstream_services.backup_service.circuit_breaker.recovery_timeout_seconds",
+      "current_value": 60,
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'upstream_services.backup_service.circuit_breaker.recovery_timeout_seconds' is present with value 60 but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'upstream_services.backup_service.circuit_breaker.recovery_timeout_seconds' as '60' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'upstream_services.backup_service.circuit_breaker.recovery_timeout_seconds' = '60', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "upstream_services.backup_service.retry_attempts",
+      "current_value": 2,
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'upstream_services.backup_service.retry_attempts' is present with value 2 but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'upstream_services.backup_service.retry_attempts' as '2' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'upstream_services.backup_service.retry_attempts' = '2', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "review",
+      "parameter": "upstream_services.backup_service.timeout_seconds",
+      "current_value": 10,
+      "new_value": null,
+      "priority": 2,
+      "justification": "Config parameter 'upstream_services.backup_service.timeout_seconds' is present with value 10 but missing from the incident analysis. Verify whether it is still required for the component or should be removed.",
+      "business_impact": "Leaving 'upstream_services.backup_service.timeout_seconds' as '10' without a matching incident signal may leave the component \t\t\tconfigured for a stale or unsupported state and increase future operational risk.",
+      "rca_finding": "The current config contains 'upstream_services.backup_service.timeout_seconds' = '10', but the RCA does not identify a corresponding \t\t\tanalysis value for this parameter. The parameter should be reviewed for relevance or removal."
+    },
+    {
+      "action_type": "add",
+      "parameter": "assignment_group",
+      "current_value": null,
+      "new_value": "Database Administration",
+      "priority": 3,
+      "justification": "The incident analysis includes parameter 'assignment_group' with value 'Database Administration' but the config is missing it. Add it if it is required to resolve the underlying issue.",
+      "business_impact": "Missing 'assignment_group' = 'Database Administration' can prevent the component from applying the required behavior \t\t\tand keep the service from recovering from the observed issue.",
+      "rca_finding": "The RCA explicitly includes 'assignment_group' = 'Database Administration', but the config does not currently define it. This is a required configuration gap identified by the incident analysis."
+    },
+    {
+      "action_type": "add",
+      "parameter": "category",
+      "current_value": null,
+      "new_value": "Hardware",
+      "priority": 3,
+      "justification": "The incident analysis includes parameter 'category' with value 'Hardware' but the config is missing it. Add it if it is required to resolve the underlying issue.",
+      "business_impact": "Missing 'category' = 'Hardware' can prevent the component from applying the required behavior \t\t\tand keep the service from recovering from the observed issue.",
+      "rca_finding": "The RCA explicitly includes 'category' = 'Hardware', but the config does not currently define it. This is a required configuration gap identified by the incident analysis."
+    },
+    {
+      "action_type": "add",
+      "parameter": "description",
+      "current_value": null,
+      "new_value": "Disk usage threshold alert: Host postgres-prod.internal root partition is currently at 98% capacity. Action required to clean up old backup logs.",
+      "priority": 3,
+      "justification": "The incident analysis includes parameter 'description' with value 'Disk usage threshold alert: Host postgres-prod.internal root partition is currently at 98% capacity. Action required to clean up old backup logs.' but the config is missing it. Add it if it is required to resolve the underlying issue.",
+      "business_impact": "Missing 'description' = 'Disk usage threshold alert: Host postgres-prod.internal root partition is currently at 98% capacity. Action required to clean up old backup logs.' can prevent the component from applying the required behavior \t\t\tand keep the service from recovering from the observed issue.",
+      "rca_finding": "The RCA explicitly includes 'description' = 'Disk usage threshold alert: Host postgres-prod.internal root partition is currently at 98% capacity. Action required to clean up old backup logs.', but the config does not currently define it. This is a required configuration gap identified by the incident analysis."
+    },
+    {
+      "action_type": "add",
+      "parameter": "impact",
+      "current_value": null,
+      "new_value": "2 - Medium",
+      "priority": 3,
+      "justification": "The incident analysis includes parameter 'impact' with value '2 - Medium' but the config is missing it. Add it if it is required to resolve the underlying issue.",
+      "business_impact": "Missing 'impact' = '2 - Medium' can prevent the component from applying the required behavior \t\t\tand keep the service from recovering from the observed issue.",
+      "rca_finding": "The RCA explicitly includes 'impact' = '2 - Medium', but the config does not currently define it. This is a required configuration gap identified by the incident analysis."
+    },
+    {
+      "action_type": "add",
+      "parameter": "notes",
+      "current_value": null,
+      "new_value": "Disk space critical on production database",
+      "priority": 3,
+      "justification": "The incident analysis includes parameter 'notes' with value 'Disk space critical on production database' but the config is missing it. Add it if it is required to resolve the underlying issue.",
+      "business_impact": "Missing 'notes' = 'Disk space critical on production database' can prevent the component from applying the required behavior \t\t\tand keep the service from recovering from the observed issue.",
+      "rca_finding": "The RCA explicitly includes 'notes' = 'Disk space critical on production database', but the config does not currently define it. This is a required configuration gap identified by the incident analysis."
+    },
+    {
+      "action_type": "add",
+      "parameter": "opened_at",
+      "current_value": null,
+      "new_value": "2026-06-30T16:30:00Z",
+      "priority": 3,
+      "justification": "The incident analysis includes parameter 'opened_at' with value '2026-06-30T16:30:00Z' but the config is missing it. Add it if it is required to resolve the underlying issue.",
+      "business_impact": "Missing 'opened_at' = '2026-06-30T16:30:00Z' can prevent the component from applying the required behavior \t\t\tand keep the service from recovering from the observed issue.",
+      "rca_finding": "The RCA explicitly includes 'opened_at' = '2026-06-30T16:30:00Z', but the config does not currently define it. This is a required configuration gap identified by the incident analysis."
+    },
+    {
+      "action_type": "add",
+      "parameter": "priority",
+      "current_value": null,
+      "new_value": "1 - Critical",
+      "priority": 3,
+      "justification": "The incident analysis includes parameter 'priority' with value '1 - Critical' but the config is missing it. Add it if it is required to resolve the underlying issue.",
+      "business_impact": "Missing 'priority' = '1 - Critical' can prevent the component from applying the required behavior \t\t\tand keep the service from recovering from the observed issue.",
+      "rca_finding": "The RCA explicitly includes 'priority' = '1 - Critical', but the config does not currently define it. This is a required configuration gap identified by the incident analysis."
+    },
+    {
+      "action_type": "add",
+      "parameter": "resolution_due",
+      "current_value": null,
+      "new_value": "2026-06-30T18:30:00Z",
+      "priority": 3,
+      "justification": "The incident analysis includes parameter 'resolution_due' with value '2026-06-30T18:30:00Z' but the config is missing it. Add it if it is required to resolve the underlying issue.",
+      "business_impact": "Missing 'resolution_due' = '2026-06-30T18:30:00Z' can prevent the component from applying the required behavior \t\t\tand keep the service from recovering from the observed issue.",
+      "rca_finding": "The RCA explicitly includes 'resolution_due' = '2026-06-30T18:30:00Z', but the config does not currently define it. This is a required configuration gap identified by the incident analysis."
+    },
+    {
+      "action_type": "add",
+      "parameter": "service",
+      "current_value": null,
+      "new_value": "Database hosting",
+      "priority": 3,
+      "justification": "The incident analysis includes parameter 'service' with value 'Database hosting' but the config is missing it. Add it if it is required to resolve the underlying issue.",
+      "business_impact": "Missing 'service' = 'Database hosting' can prevent the component from applying the required behavior \t\t\tand keep the service from recovering from the observed issue.",
+      "rca_finding": "The RCA explicitly includes 'service' = 'Database hosting', but the config does not currently define it. This is a required configuration gap identified by the incident analysis."
+    },
+    {
+      "action_type": "add",
+      "parameter": "subcategory",
+      "current_value": null,
+      "new_value": "Storage",
+      "priority": 3,
+      "justification": "The incident analysis includes parameter 'subcategory' with value 'Storage' but the config is missing it. Add it if it is required to resolve the underlying issue.",
+      "business_impact": "Missing 'subcategory' = 'Storage' can prevent the component from applying the required behavior \t\t\tand keep the service from recovering from the observed issue.",
+      "rca_finding": "The RCA explicitly includes 'subcategory' = 'Storage', but the config does not currently define it. This is a required configuration gap identified by the incident analysis."
+    },
+    {
+      "action_type": "add",
+      "parameter": "urgency",
+      "current_value": null,
+      "new_value": "1 - High",
+      "priority": 3,
+      "justification": "The incident analysis includes parameter 'urgency' with value '1 - High' but the config is missing it. Add it if it is required to resolve the underlying issue.",
+      "business_impact": "Missing 'urgency' = '1 - High' can prevent the component from applying the required behavior \t\t\tand keep the service from recovering from the observed issue.",
+      "rca_finding": "The RCA explicitly includes 'urgency' = '1 - High', but the config does not currently define it. This is a required configuration gap identified by the incident analysis."
+    }
+  ],
+  "status": "pending",
+  "pr_number": null,
+  "pr_url": null,
+  "rca_ref": "Incidents/RCA/INC-103.json",
+  "config_snapshot_ref": "configs/database_ops.json"
+}

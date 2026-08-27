@@ -1,0 +1,167 @@
+{
+    "_metadata": {
+        "family": "database-hosting",
+        "app_component": "postgres-prod",
+        "version": "5.0.0",
+        "environment": "production",
+        "last_modified": "2026-06-30T16:45:00Z",
+        "last_modified_by": "db-admin",
+        "config_schema_version": "2.2"
+    },
+    "server": {
+        "host": null,
+        "port": null,
+        "graceful_shutdown_timeout_seconds": null,
+        "request_timeout_seconds": null,
+        "max_concurrent_requests": null
+    },
+    "database": {
+        "host": null,
+        "port": null,
+        "name": null,
+        "user": null,
+        "password_secret_ref": null,
+        "connection_pool": {
+            "min_size": null,
+            "max_size": null,
+            "max_idle_seconds": null,
+            "connection_timeout_ms": null,
+            "validation_query": null
+        },
+        "ssl": {
+            "enabled": null,
+            "mode": null,
+            "cert_path": null
+        },
+        "maintenance": {
+            "backup_retention_days": null,
+            "cleanup_threshold_percent": null,
+            "backup_log_retention_days": null,
+            "old_log_cleanup_strategy": null
+        }
+    },
+    "auth": {
+        "jwt": {
+            "algorithm": "RS10202",
+            "issuer": null,
+            "audience": null,
+            "access_token_expiry_seconds": null,
+            "refresh_token_expiry_seconds": null,
+            "private_key_secret_ref": null,
+            "public_key_secret_ref": null,
+            "clock_skew_tolerance_seconds": null
+        },
+        "password_policy": {
+            "min_length": null,
+            "require_uppercase": null,
+            "require_numbers": null,
+            "require_special_chars": null,
+            "max_failed_attempts": null,
+            "lockout_duration_seconds": null
+        },
+        "mfa": {
+            "enabled": null,
+            "providers": null,
+            "totp_issuer": null
+        }
+    },
+    "cache": {
+        "provider": null,
+        "redis": {
+            "host": null,
+            "port": null,
+            "db_index": null,
+            "password_secret_ref": null,
+            "session_ttl_seconds": null,
+            "token_blacklist_ttl_seconds": null,
+            "max_connections": null,
+            "connection_timeout_ms": null,
+            "retry_on_timeout": null
+        }
+    },
+    "security": {
+        "rate_limit": {
+            "enabled": null,
+            "requests_per_minute": null,
+            "burst_size": null,
+            "strategy": null,
+            "key_by": null
+        },
+        "cors": {
+            "allowed_origins": null,
+            "allowed_methods": null,
+            "allow_credentials": null,
+            "max_age_seconds": null
+        },
+        "tls": {
+            "enabled": null,
+            "min_version": null,
+            "cert_path": null,
+            "key_path": null
+        }
+    },
+    "logging": {
+        "level": null,
+        "format": null,
+        "output": null,
+        "include_request_body": null,
+        "include_response_body": null,
+        "slow_request_threshold_ms": null,
+        "log_rotation": {
+            "enabled": null,
+            "max_size_mb": null,
+            "max_backups": null
+        }
+    },
+    "observability": {
+        "metrics": {
+            "enabled": null,
+            "endpoint": null,
+            "port": null
+        },
+        "tracing": {
+            "enabled": null,
+            "provider": null,
+            "endpoint": null,
+            "sampling_rate": null
+        },
+        "health_check": {
+            "enabled": null,
+            "endpoint": null,
+            "interval_seconds": null
+        }
+    },
+    "upstream_services": {
+        "backup_service": {
+            "base_url": null,
+            "timeout_seconds": null,
+            "retry_attempts": null,
+            "circuit_breaker": {
+                "enabled": null,
+                "failure_threshold": null,
+                "recovery_timeout_seconds": null
+            }
+        },
+        "alert_service": {
+            "base_url": null,
+            "timeout_seconds": null,
+            "retry_attempts": null,
+            "circuit_breaker": {
+                "enabled": null,
+                "failure_threshold": null,
+                "recovery_timeout_seconds": null
+            }
+        }
+    },
+    "assignment_group": "Database Administration",
+    "category": "Hardware",
+    "description": "Disk usage threshold alert: Host postgres-prod.internal root partition is currently at 98% capacity. Action required to clean up old backup logs.",
+    "impact": "2 - Medium",
+    "notes": "Disk space critical on production database",
+    "opened_at": "2026-06-30T16:30:00Z",
+    "priority": "1 - Critical",
+    "resolution_due": "2026-06-30T18:30:00Z",
+    "service": "Database hosting",
+    "subcategory": "Storage",
+    "urgency": "1 - High"
+}
